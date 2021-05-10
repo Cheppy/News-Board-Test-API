@@ -4,6 +4,7 @@
 
 ## About
 Simple news board API is created with django rest framework. Project is deployed on [Heroku](http://news-blog-django-yefrem.herokuapp.com/).
+Examples of usage:
 
    * Here you can find acces to [Articles](http://news-blog-django-yefrem.herokuapp.com/api/articles).
    
