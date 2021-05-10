@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-a0_y55#umii#6wu$2=8tk(w2qyryy&8gepy=ip!-^8t9vo%=)6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'https://agile-ravine-09392.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django_crontab",
     "news_board",
 ]
+
 
 CRONJOBS = [
     ('58 23 * * *', 'news_board.cron.clean_upvotes_job')
