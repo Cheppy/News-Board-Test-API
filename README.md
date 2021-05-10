@@ -4,6 +4,7 @@
 
 ## About
 Simple news board API is created with django rest framework. Project is deployed on [Heroku](http://news-blog-django-yefrem.herokuapp.com/).
+Examples of usage:
 
    * Here you can find acces to [Articles](http://news-blog-django-yefrem.herokuapp.com/api/articles).
    
@@ -27,12 +28,32 @@ Simple news board API is created with django rest framework. Project is deployed
  ```
  python manage.py runserver
  ```
+ 
+ 
  ## Featuers
-  It is possible to schedule some commands as a cronjob, or even execute them manualy. Commands can be found in `Django_News_board/news_board/management/commands`
+  * To manage or add new commands go to `/managment/commands` in the application folder.
+  * It is possible to schedule some commands as a cronjob. to do so, add them in `cron.py` script that is located in application folder.
   
+  To show current active jobs of this project use:
+
+   ```
+   python manage.py crontab show
+   ```
+   To add new command, add it to the CRONJOBS list in `settings.py` as shown in example below:
+   ```
+   CRONJOBS = [
+    ('58 23 * * *', 'news_board.cron.clean_upvotes_job'),
+     ('* 10 * * *', 'django.core.management.call_command', ['clearsessions']),
+    ]
+   ```
+   To add all defined jobs from CRONJOBS to crontab run this command:
+   ```
+      ppython manage.py crontab add
+   ```
+   
+   
  ## Licenses
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-  
   
