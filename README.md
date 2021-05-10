@@ -48,7 +48,7 @@ Examples of usage:
    ```
    To add all defined jobs from CRONJOBS to crontab run this command:
    ```
-      ppython manage.py crontab add
+      python manage.py crontab add
    ```
    
    
