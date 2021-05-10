@@ -12,10 +12,7 @@ from .serializers import ArticleSerializer, CommentSerializer
 
 
 def index(request):
-    return render(
-        request,
-        'index.html'
-    )
+    return render(request,'index.html')
 
 class ArticleList(APIView):
     """
