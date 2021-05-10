@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     "news_board",
 ]
 
-
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 CRONJOBS = [
     ('58 23 * * *', 'news_board.cron.clean_upvotes_job')
