@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework.generics import get_object_or_404
 from rest_framework.generics import (
@@ -9,11 +10,12 @@ from rest_framework.views import APIView
 from rest_framework import status, renderers
 from .models import Article, Comment
 from .serializers import ArticleSerializer, CommentSerializer
+from django.template import loader
 
 
 def index(request):
-    return render(request,'index.html')
-
+    template = loader.get_template('index.html')
+    return HttpResponse(template.render(request))
 
 class ArticleList(APIView):
     """
