@@ -33,11 +33,14 @@ Simple news board API is created with django rest framework. Project is deployed
   * To manage or add new commands go to `/managment/commands` in the application folder.
   * It is possible to schedule some commands as a cronjob. to do so, add them in `cron.py` script that is located in application folder.
   
+  To show current active jobs of this project use:
+
+   ```python manage.py crontab show```
+  
 
 python manage.py crondtab show
  ## Licenses
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-  
   
