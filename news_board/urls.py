@@ -1,7 +1,7 @@
 from django.urls import path
 from django.contrib import admin
 from .views import (ArticleDetail, ArticleList, CommentList,
-                    ArticleUpvote, CommentDetail, index)
+                    ArticleUpvote, CommentDetail)
 
 
 app_name = "articles"

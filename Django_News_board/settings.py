@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-a0_y55#umii#6wu$2=8tk(w2qyryy&8gepy=ip!-^8t9vo%=)6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -42,13 +42,9 @@ INSTALLED_APPS = [
     "news_board",
 ]
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
-CRONJOBS = [
-    ('58 23 * * *', 'news_board.cron.clean_upvotes_job')
-]
+CRONJOBS = [("58 23 * * *", "news_board.cron.clean_upvotes_job")]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",

@@ -1,9 +1,9 @@
 from django.http import HttpResponse
-from django.shortcuts import render
 from rest_framework.generics import get_object_or_404
 from rest_framework.generics import (
-    ListCreateAPIView, RetrieveUpdateDestroyAPIView,
-    UpdateAPIView
+    ListCreateAPIView,
+    RetrieveUpdateDestroyAPIView,
+    UpdateAPIView,
 )
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -14,8 +14,9 @@ from django.template import loader
 
 
 def index(request):
-    template = loader.get_template('index.html')
+    template = loader.get_template("index.html")
     return HttpResponse(template.render(request))
+
 
 class ArticleList(APIView):
     """
@@ -28,7 +29,10 @@ class ArticleList(APIView):
         serializer = ArticleSerializer(data=article)
         if serializer.is_valid(raise_exception=True):
             article_saved = serializer.save()
-            return Response(f"success: Article '{article_saved}' created successfully")
+            return Response(
+                f"success: Article '{article_saved}' \
+            created successfully"
+            )
         else:
             return Response("bad request")
 

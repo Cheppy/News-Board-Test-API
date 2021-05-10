@@ -1,5 +1,4 @@
 import datetime
-from django.utils import timezone
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -7,6 +6,7 @@ from django.contrib.auth.models import User
 class Board_User(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.CharField(max_length=30)
+    info = models.CharField(max_length=30)
 
     def __str__(self):
         return f"{self.user}"
@@ -18,7 +18,8 @@ class Article(models.Model):
     body = models.TextField()
     creation_date = models.DateTimeField(default=datetime.datetime.now)
     author_name = models.ForeignKey(
-        "Board_User", related_name="articles", on_delete=models.CASCADE, null=True
+        "Board_User", related_name="articles",
+        on_delete=models.CASCADE, null=True
     )
     # up_votes = models.ManyToManyField(User)
     amount_of_upvotes = models.IntegerField(default=0)
