@@ -14,8 +14,13 @@ from django.template import loader
 
 
 def index(request):
-    template = loader.get_template('index.html')
-    return HttpResponse(template.render(request))
+
+
+    context = {
+    }
+
+    # Render the HTML template index.html with the data in the context variable
+    return render(request, 'index.html', context=context)
 
 class ArticleList(APIView):
     """

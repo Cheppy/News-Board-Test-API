@@ -18,7 +18,7 @@ from django.urls import path, include
 from news_board.views import  index
 
 urlpatterns = [
-    path("/", index()),
+    path("/", index),
     path("admin/", admin.site.urls),
     path("api/", include("news_board.urls")),
 ]
