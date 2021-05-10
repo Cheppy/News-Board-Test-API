@@ -14,6 +14,7 @@ from .serializers import ArticleSerializer, CommentSerializer
 def index(request):
     return render(request,'index.html')
 
+
 class ArticleList(APIView):
     """
     List all snippets, or create a new snippet.

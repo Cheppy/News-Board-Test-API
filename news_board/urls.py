@@ -1,7 +1,7 @@
 from django.urls import path
 from django.contrib import admin
 from .views import (ArticleDetail, ArticleList, CommentList,
-                    ArticleUpvote, CommentDetail)
+                    ArticleUpvote, CommentDetail, index)
 
 
 app_name = "articles"
@@ -12,6 +12,5 @@ urlpatterns = [
     path("articles/<int:pk>", ArticleDetail.as_view()),
     path("comments/", CommentList.as_view(), name="comments"),
     path("comments/<int:pk>", CommentDetail.as_view()),
-
     path("articles/<int:pk>/upvote/", ArticleUpvote.as_view()),
 ]
