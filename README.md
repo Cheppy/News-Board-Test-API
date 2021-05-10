@@ -35,10 +35,22 @@ Simple news board API is created with django rest framework. Project is deployed
   
   To show current active jobs of this project use:
 
-   ```python manage.py crontab show```
-  
-
-python manage.py crondtab show
+   ```
+   python manage.py crontab show
+   ```
+   To add new command, add it to the CRONJOBS list in `settings.py` as shown in example below:
+   ```
+   CRONJOBS = [
+    ('58 23 * * *', 'news_board.cron.clean_upvotes_job'),
+     ('* 10 * * *', 'django.core.management.call_command', ['clearsessions']),
+    ]
+   ```
+   To add all defined jobs from CRONJOBS to crontab run this command:
+   ```
+      ppython manage.py crontab add
+   ```
+   
+   
  ## Licenses
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
