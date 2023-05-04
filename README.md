@@ -1,6 +1,6 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-#>DEPRICATED<
-# News Board Djangro REST API
+#
+# News Board Djangro REST >API DEPRICATED<
 
 ## About
 Simple news board API is created with django rest framework. Project is deployed on [Heroku](http://news-blog-django-yefrem.herokuapp.com/).
